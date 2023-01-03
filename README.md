@@ -62,7 +62,7 @@ From there, you can run the notebooks in the [notebooks](notebooks/) folder.
 In our study, we evaluate the following smells:
 
 | Code Smell                   | Definition                                                                                  | Reference |
-|------------------------------|---------------------------------------------------------------------------------------------|-----------|
+| ---------------------------- | ------------------------------------------------------------------------------------------- | --------- |
 | God Class                    | A large class that have too many responsibilities and centralizes the module functionality. | [3]       |
 | Refused Bequest              | A class that does not want to use its parent behavior.                                      | [2]       |
 | Spaghetti Code               | A class that has methods with large and unique multistage process flow.                     | [1]       |
@@ -108,7 +108,7 @@ There is a folder called [correlations](correlations/) with the respective corre
 All data is available under the [data](data/) folder. Below, we present folder's working tree.
 
 | Folder                        | Content                                            |
-|-------------------------------|----------------------------------------------------|
+| ----------------------------- | -------------------------------------------------- |
 | [**final**](data/final)       | Contains the final dataset with defects and smells |
 | [**projects**](data/projects) | Contains the projects used in the study            |
 | [**raw**](data/raw)           | Contains the raw dataset with defects              |
@@ -119,18 +119,18 @@ Each project folder has all `csv` files with the information about the code smel
 
 #### Explanations
 
-Inside the [explanations](explanations/) folder, we have all SHAP explanations for each target. Since SHAP uses a more visual approach, the practitioners first have to understand how to interpret them. For instance, observe the explanation for the God Class [PUT IMAGE]. [EXPLAIN HOW TO INTERPRET]
+Inside the [explanations](explanations/) folder, we have all SHAP explanations for each target. 
 
 ### Features
 
-The complete list of features is available in the [features](folder here) folder. There two files in this folder:
+The complete list of features is available in the [features](features/) folder. There two files in this folder:
 
 - [features.md](features/features.md): contains the list of features used in the study with the considered correlation.
 - [OpenStaticAnalyzer-1.0-Metrics.html](features/OpenStaticAnalyzer-1.0-Metrics.html): contains the list of features with a brief description.
 
 ### Models
 
-The models created in the study are available in the [models](models/) folder. Each target has its own `pickle` file. Note that some files are too large for GitHub storage, and you have to unzip the `zip` files to use the models (defect, gc, lc, and sc).
+The models created in the study are available inthe [models](models/) folder. Each target has its own `pickle` file. Note that some files are too large for GitHub storage, and you have to unzip the `zip` files to use the models (defect, gc, lc, and sc).
 
 ### Notebooks
 

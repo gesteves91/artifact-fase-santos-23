@@ -28,6 +28,7 @@ pip3 install -r requirements.txt
 
 In case you don't have Python 3.9, you can use Pyenv to install it. As this scripts may be useful for other projects, we include them in the [scripts](scripts/) folder.
 
+
 ```bash
 # Install dependencies
 sudo apt update
@@ -98,11 +99,19 @@ Our dataset is composed of the following systems and their source code can be fo
 - Titan 0.5
 - Xalan 2.7
 
-## Folders
+## Hardware Requirements
+
+The experiments were performed on a machine with the following specifications:
+- 16 GB RAM
+- 8th generation Intel Core i7 processor (or equivalent)
+
+## Test Instructions
+
+Basically, you can run the notebooks in the [notebooks](notebooks/) folder. Below, we describe each folder contained on the repository.
 
 ### Correlations
 
-There is a folder called [correlations](correlations/) with the respective correlation analysis divided by each quality attribute. The blue value indicates low correlation, while red represents high correlation. As the paper mention, we first set our threshold to 99% of correlation and excluded the metrics that were more general, for instance, Total Number of Attributtes (TNA). We then remove those features that had a multicollinearity higher than 85%. 
+There is a folder called [correlations](correlations/) with the respective correlation analysis divided by each quality attribute. The blue value indicates low correlation, while red represents high correlation. As the paper mention, we first set our threshold to 99% of correlation and excluded the metrics that were more general, for instance, Total Number of Attributes (TNA). We then remove those features that had a multicollinearity higher than 85%.
 ### Data
 
 All data is available under the [data](data/) folder. Below, we present folder's working tree.
@@ -115,7 +124,6 @@ All data is available under the [data](data/) folder. Below, we present folder's
 | [**unseen**](data/unseen)     | Contains the unseen dataset to test the models     |
 
 Each project folder has all `csv` files with the information about the code smells. The files follow this naming pattern: `organic<code_smell>.csv`
-
 
 #### Explanations
 
@@ -151,6 +159,9 @@ Inside the [scripts](scripts/) folder, we stored the [Organic](https://github.co
 
 Inside the [validation](validation/) folder, we have the results of the validation of the Organic tool with developers.
 
+## Replication Instructions
+
+If the required packages are installed according to the Setup section of this document. You should be able to run each cell of the notebooks in the [notebooks](notebooks/) folder.
 ##### References
 
 - [1] Brown, W.H., Malveau, R.C., McCormick, H.W.S., Mowbray, T.J.: AntiPatterns: refactoring software, architectures, and projects in crisis. John Wiley & Sons, Inc. (1998)

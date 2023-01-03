@@ -1,3 +1,4 @@
+
 # Replication Package Comparison Defects and Code Smells
 
 ## Summary
@@ -18,7 +19,7 @@ You can cite the paper as follows:
 
 ## Setup
 
-To use the replication package, we recommend applying the dependencies included on the [requirements](requirements.txt) file. We strongly recommend using Python 3.9 Virtual Environment as follows, since Pycaret requires it.
+To use the replication package, we recommend applying the dependencies included in the [requirements](requirements.txt) file. We strongly recommend using Python 3.9 Virtual Environment as follows, since Pycaret requires it.
 
 ```bash
 python3 -m venv .venv
@@ -26,7 +27,7 @@ source .venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
-In case you don't have Python 3.9, you can use Pyenv to install it. As this scripts may be useful for other projects, we include them in the [scripts](scripts/) folder.
+In case you don't have Python 3.9, you can use Pyenv to install it. As these scripts may be useful for other projects, we include them in the [scripts](scripts/) folder.
 
 
 ```bash
@@ -64,15 +65,15 @@ In our study, we evaluate the following smells:
 
 | Code Smell                   | Definition                                                                                  | Reference |
 | ---------------------------- | ------------------------------------------------------------------------------------------- | --------- |
-| God Class                    | A large class that have too many responsibilities and centralizes the module functionality. | [3]       |
+| God Class                    | A large class that has too many responsibilities and centralizes the module functionality. | [3]       |
 | Refused Bequest              | A class that does not want to use its parent behavior.                                      | [2]       |
 | Spaghetti Code               | A class that has methods with large and unique multistage process flow.                     | [1]       |
 | Class Data Should be Private | A class with too many public fields.                                                        | [4]       |
-| Data Class                   | Classes that have only fields, getters and setters.                                         | [2]       |
+| Data Class                   | Classes that have only fields, getters, and setters.                                         | [2]       |
 | Lazy Class                   | Classes that have little behavior, with few methods and fields.                             | [2]       |
 | Speculative Generality       | Classes that support future behavior, usually interacting with test classes only.           | [2]       |
 
-In order to identify such smells we relied on the Organic tool. If you want to run the Organic tool to asses the smell collection process, you can, for instance, for the project `ant`, execute the following command:
+To identify such smells we relied on the Organic tool. If you want to run the Organic tool to asses the smell collection process, you can, for instance, for the project `ant`, execute the following command:
 
 ```bash
 java -jar organic-OPT.jar -sf ../projects/ant/organic/ant.json -src "../bad-smells-defects/projects/ant"
@@ -82,7 +83,7 @@ You can execute the `organic-OPT.jar` included inside the [scripts](scripts/) fo
 
 ### Open-Source Java Projects
 
-Our dataset is composed of the following systems and their source code can be found at the folder data/projects. 
+Our dataset is composed of the following systems and their source code can be found in the folder data/projects. 
 
 - Ant 1.7
 - Broadleaf 3.0
@@ -107,14 +108,14 @@ The experiments were performed on a machine with the following specifications:
 
 ## Test Instructions
 
-Basically, you can run the notebooks in the [notebooks](notebooks/) folder. Below, we describe each folder contained on the repository.
+You can run the notebooks in the [notebooks](notebooks/) folder. Below, we describe each folder contained in the repository.
 
 ### Correlations
 
-There is a folder called [correlations](correlations/) with the respective correlation analysis divided by each quality attribute. The blue value indicates low correlation, while red represents high correlation. As the paper mention, we first set our threshold to 99% of correlation and excluded the metrics that were more general, for instance, Total Number of Attributes (TNA). We then remove those features that had a multicollinearity higher than 85%.
+There is a folder called [correlations](correlations/) with the respective correlation analysis divided by each quality attribute. The blue value indicates a low correlation, while the red represents a high correlation. As the paper mention, we first set our threshold to 99% of correlation and excluded the more general metrics, for instance, Total Number of Attributes (TNA). We then remove those features that had multicollinearity higher than 85%.
 ### Data
 
-All data is available under the [data](data/) folder. Below, we present folder's working tree.
+All data is available under the [data](data/) folder. Below, we present the folder's working tree.
 
 | Folder                        | Content                                            |
 | ----------------------------- | -------------------------------------------------- |
@@ -131,14 +132,14 @@ Inside the [explanations](explanations/) folder, we have all SHAP explanations f
 
 ### Features
 
-The complete list of features is available in the [features](features/) folder. There two files in this folder:
+The complete list of features is available in the [features](features/) folder. There are two files in this folder:
 
 - [features.md](features/features.md): contains the list of features used in the study with the considered correlation.
 - [OpenStaticAnalyzer-1.0-Metrics.html](features/OpenStaticAnalyzer-1.0-Metrics.html): contains the list of features with a brief description.
 
 ### Models
 
-The models created in the study are available inthe [models](models/) folder. Each target has its own `pickle` file. Note that some files are too large for GitHub storage, and you have to unzip the `zip` files to use the models (defect, gc, lc, and sc).
+The models created in the study are available in the [models](models/) folder. Each target has its own `pickle` file. Note that some files are too large for GitHub storage, and you have to unzip the `zip` files to use the models (defect, gc, lc, and sc).
 
 ### Notebooks
 
@@ -162,6 +163,7 @@ Inside the [validation](validation/) folder, we have the results of the validati
 ## Replication Instructions
 
 If the required packages are installed according to the Setup section of this document. You should be able to run each cell of the notebooks in the [notebooks](notebooks/) folder.
+
 ##### References
 
 - [1] Brown, W.H., Malveau, R.C., McCormick, H.W.S., Mowbray, T.J.: AntiPatterns: refactoring software, architectures, and projects in crisis. John Wiley & Sons, Inc. (1998)
